@@ -1,0 +1,35 @@
+		Survival
+		________
+	
+	Enter your name:
+	Enter your gender(m/f):
+	
+	Hello (title) (name), are you ready to begin? (yes / no)
+	
+	[if yes] 
+	
+		You're locked in a prison cell. You can feel the cool air on your face
+	as you look out of the cell window. 
+	
+		Suddenly, you hear the jingling of keys being forced into metal. 
+	Your cell door bursts open to reveal a hooded siluet of a woman.
+	"Come with me if you want to live a free life upon the seas, friend."
+	
+		[if yes]
+		
+				You rush to the freedom with the stranger and a group of other prisoners. 
+			
+			You live a happy life until the next week, when you die from Glycoalkaloid poisoning.
+									[The End]
+		[if no]
+			
+				"Suit yourself! I'll just leave this door unlocked for you anyway. Have a good life!"
+				
+			You escape from the prison, build a home in the countryside and strike oil when planting for potatoes.
+			You are instantly famous, captured for escaping prison, and sentenced to death by FaceHugger.
+								"Chookity-pah"
+								   [The End]
+								   
+	[if no]
+	
+		[esc to quit]
