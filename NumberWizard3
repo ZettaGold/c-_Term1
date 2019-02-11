@@ -1,0 +1,150 @@
+#include <string>
+#include <iostream>
+#include <cstdlib>
+using namespace std;
+
+int main()
+{
+	short userValue, evilNumber;
+	string thankYou, youFail, win;
+
+	evilNumber = (rand()%10);
+	thankYou = "Thank you for not choosing the evil number! \nThe new evil number is ";
+	youFail = "You chose the evil number! Exiting program ... \n";
+	win = "You selected every number without using the evil number! \n YOU WIN!!! \n";
+
+	cout << "\t Number Wizard 3 \n";
+	cout << "\t _______________ \n";
+
+	cout << "Please choose a number between 0 and 9 without using " << evilNumber << ": ";
+	cin >> userValue;
+	
+	if (userValue != evilNumber) // is repeated 10 times, each time with a new random evilNumber.
+	{
+		evilNumber = (rand() % 10);
+		cout << thankYou << evilNumber << "\n Please choose another number: ";
+		cin >> userValue;
+		if (userValue != evilNumber)
+		{
+			evilNumber = (rand() % 10);
+			cout << thankYou << evilNumber << "\n Please choose another number: ";
+			cin >> userValue;
+			if (userValue != evilNumber)
+			{
+				evilNumber = (rand() % 10);
+				cout << thankYou << evilNumber << "\n Please choose another number: ";
+				cin >> userValue;
+				if (userValue != evilNumber)
+				{
+					evilNumber = (rand() % 10);
+					cout << thankYou << evilNumber << "\n Please choose another number: ";
+					cin >> userValue;
+					if (userValue != evilNumber)
+					{
+						evilNumber = (rand() % 10);
+						cout << thankYou << evilNumber << "\n Please choose another number: ";
+						cin >> userValue;
+						if (userValue != evilNumber)
+						{
+							evilNumber = (rand() % 10);
+							cout << thankYou << evilNumber << "\n Please choose another number: ";
+							cin >> userValue;
+							if (userValue != evilNumber)
+							{
+								evilNumber = (rand() % 10);
+								cout << thankYou << evilNumber << "\n Please choose another number: ";
+								cin >> userValue;
+								if (userValue != evilNumber)
+								{
+									evilNumber = (rand() % 10);
+									cout << thankYou << evilNumber << "\n Please choose another number: ";
+									cin >> userValue;
+									if (userValue != evilNumber)
+									{
+										cout << win;
+										
+									}
+									else if (userValue == evilNumber)
+									{
+										cout << youFail;
+									}
+									else
+									{
+										cout << "Please select a valid numeric value";
+									}
+								}
+								else if (userValue == evilNumber)
+								{
+									cout << youFail;
+								}
+								else
+								{
+									cout << "Please select a valid numeric value";
+								}
+							}
+							else if (userValue == evilNumber)
+							{
+								cout << youFail;
+							}
+							else
+							{
+								cout << "Please select a valid numeric value";
+							}
+
+						}
+						else if (userValue == evilNumber)
+						{
+							cout << youFail;
+						}
+						else
+						{
+							cout << "Please select a valid numeric value";
+						}
+					}
+					else if (userValue == evilNumber)
+					{
+						cout << youFail;
+					}
+					else
+					{
+						cout << "Please select a valid numeric value";
+					}
+				}
+				else if (userValue == evilNumber)
+				{
+					cout << youFail;
+				}
+				else
+				{
+					cout << "Please select a valid numeric value";
+				}
+			}
+			else if (userValue == evilNumber)
+			{
+				cout << youFail;
+			}
+			else
+			{
+				cout << "Please select a valid numeric value";
+			}
+		}
+		else if (userValue == evilNumber)
+		{
+			cout << youFail;
+		}
+		else
+	{
+	cout << "Please select a valid numeric value";
+	}
+	} 
+	else if (userValue == evilNumber)
+	{
+		cout << youFail;
+	}
+	else
+	{
+		cout << "Please select a valid numeric value";
+	}
+	system("pause");
+	return 0;
+}
