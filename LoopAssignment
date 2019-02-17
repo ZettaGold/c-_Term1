@@ -1,0 +1,39 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	int students = 0, studentCount;
+	float grade, max=0.0, min=100.0, sum, average;
+
+	cout << "\t COLLEGE-LASALLE \n";
+	cout << "\t --------------- \n \n";
+	do
+	{
+		cout << "Enter students to grade: ";
+		cin >> students;
+	} while (students < 2 || students > 20);
+
+	for (studentCount = 1; studentCount <= students; ++studentCount)
+	{
+		cout << "Enter grade "<<studentCount<<": ";
+		cin >> grade;
+		sum = 0;
+		sum = sum + grade;
+		if (grade > max)
+		{
+			max = grade;
+		}
+		else if (grade < min)
+		{
+			min = grade;
+		}
+	} 
+	average = sum / students;
+	cout << "The average of your students is: " << average << ". \n";
+	cout << "The highest grade you entered is: " << max << ". \n";
+	cout << "The lowest grade you entered is: " << min << ". \n";
+
+	system("pause");
+	return 0;
+}
