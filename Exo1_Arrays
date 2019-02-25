@@ -1,0 +1,45 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	short tabGrade[20];
+	short students = 0;
+	int counter = 1;
+
+	cout << "Exo 1   |\n";
+	cout << "________\n\n";
+	cout << "\t LASALLE COLLEGE \n";
+	cout << "\t --------------- \n \n";
+	cout << "Enter the number of students(max 20): ";
+	cin >> students;
+
+	if (students >= 2 && students <= 20)
+	{
+
+		for (int I = 0; I < students;I++)
+		{
+			
+			cout << "Enter grade " << counter << ": ";
+			cin >> tabGrade[I];
+			counter++;
+			cout << "\t" << I << " - " << tabGrade[I] << endl;
+			if (I == students)
+			{
+				cout << "Thanks \n";
+				cout << "The class grades are: \n" << tabGrade[I];
+			}
+		}
+		
+	}
+
+	else
+	{
+		cout << "You did not enter a valid value. Goodbye \n";
+	}
+
+
+
+	system("pause");
+	return 0;
+}
