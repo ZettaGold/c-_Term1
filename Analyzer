@@ -1,0 +1,115 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	char phrase[501];
+	short nbLetters = 0, nbVowels = 0, nbConsonants = 0, nbSpecial = 0, nbNum = 0, nbSpace = 0, I = 0, total = 0;
+	cout << "\t THE ANALYZER \n";
+	cout << "\t ------------ \n";
+	cout << "Enter a phrase (Max 500): ";
+	cin.getline(phrase, 501);
+	cout << "Analyzing...\n";
+	cout << "Your phrase \n";
+	cout << phrase << endl;
+
+	while (phrase[I] != '\0')
+	{
+		switch (phrase[I])
+		{
+			//Consonants
+		case 'B':
+		case 'b':
+		case 'C':
+		case 'D':
+		case 'd':
+		case 'F':
+		case 'f':
+		case 'G':
+		case 'g':
+		case 'H':
+		case 'h':
+		case 'J':
+		case 'j':
+		case 'K':
+		case 'k':
+		case 'L':
+		case 'l':
+		case 'M':
+		case 'm':
+		case 'N':
+		case 'n':
+		case 'P':
+		case 'p':
+		case 'Q':
+		case 'q':
+		case 'R':
+		case 'r':
+		case 'S':
+		case 's':
+		case 'T':
+		case 't':
+		case 'U':
+		case 'u':
+		case 'W':
+		case 'w':
+		case 'X':
+		case 'x':
+		case 'Z':
+		case 'z':
+			
+			++nbConsonants;
+				
+			//Vowels
+		case 'A':
+		case 'a':
+		case 'E':
+		case 'e':
+		case 'I':
+		case 'i':
+		case 'O':
+		case 'o':
+		case 'Y':
+		case 'y':
+			++nbVowels;
+			
+		case ' ':
+			//Spaces
+			++nbSpace;
+
+		
+			
+		case '1':
+		case '2':
+		case '3':
+		case '4':
+		case '5':
+		case '6':
+		case '7':
+		case '8':
+		case '9':
+		case '0':
+			++nbNum;
+			break;
+		default :
+			++nbSpecial;
+			I++;
+
+			
+		}
+		
+	}
+	cout << "Your phrase\n";
+	total = (nbNum + nbSpecial + nbConsonants + nbVowels);
+	cout << "-- Contains a total of " << total << " characters \n";
+	cout << "-- Contains " << nbNum << " numbers";
+	cout << "-- Contains " << nbConsonants + nbVowels << " letters\n";
+	cout << "\t * " << nbVowels << " vowels\n";
+	cout << "\t * " << nbConsonants << " consonants\n";
+
+	cout << "End";
+	system("pause");
+	return 0;
+
+}
