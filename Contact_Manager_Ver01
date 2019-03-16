@@ -1,0 +1,55 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main()
+{
+	string fullName[25], firstName[25], lastName[50], address[25], cityInformation[50], delimiter = ",", city[25], province[25], postalCode[25];
+	short I = 0;
+	size_t pos = 0;
+	
+
+	cout << "\t CONTACTS-MANAGER \n";
+	cout << "\t ---------------- \n\n";
+	cout << "Enter your first and last name (seperated by comma): ";
+	getline(cin, fullName[I]);
+	while ((pos = fullName[I].find(delimiter)) != string::npos)
+	{
+		firstName[I] = fullName[I].substr(0, pos);
+		cout << firstName[I] << endl;
+		lastName[I] = (fullName[I].substr(pos + delimiter.length()));
+		cout << lastName[I] << endl;
+		I++;
+		break;
+	}
+	cout << "Enter your address: ";
+	getline(cin, address[I]);
+	cout << "Enter your city, province and postal code (,): ";
+	getline(cin, cityInformation[I]);
+
+	while ((pos = cityInformation[I].find(delimiter)) != string::npos)
+	{
+		city[I] = cityInformation[I].substr(0, pos);
+		cout << city[I] << endl;
+		I++;
+		break;
+	}
+
+	
+	cout << "Thanks, your informations are saved as: \n";
+	
+	/*while (fullName[I] != ',')
+	{
+		cin >> fullName[I];
+		I++;
+		
+
+		
+	}*/
+	
+	
+
+	system("pause");
+	return 0;
+
+} 
