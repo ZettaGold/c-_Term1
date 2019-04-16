@@ -1,0 +1,158 @@
+// Include libraries
+#pragma once
+#include <iostream> // cout & cin
+#include <iomanip> // setw
+#include <string>
+using namespace std;
+
+//Structured libraries
+struct Date
+{
+	int day, month, year;
+};
+struct Students
+{
+	string name;
+	string studentID;
+	Date birthDate;
+};
+//Display title
+void DisplayTitle(string title)
+{
+	int I;
+	char underline[50] = "";
+	for (I = 0; I <= title.length(); I++)
+	{
+		title[I] = toupper(title[I]);
+		underline[I] = '-';
+	}
+	underline[I] = '\0';
+	cout << "\t " << title << "\n";
+	cout << "\t " << underline << "\n\n";
+}
+//Read Number of students
+int ReadNBStudents(int max, int min)
+{
+	int NB;
+	do
+	{
+		cout << "Please enter the number of students(max 10): ";
+		cin >> NB;
+	} while (NB < min || NB > max);
+	return NB;
+
+}
+//Read Student Number 
+string ReadStudentNumber()
+{
+	string tmp;
+	do
+	{
+		cout << "\tNumber: ";
+		getline(cin, tmp);
+	} while (tmp.length() == 0);
+	return tmp;
+}
+//Read Student Name
+string ReadStudentName()
+{
+	string tmp;
+	do
+	{
+		cout << "\tName: ";
+		getline(cin, tmp);
+	} while (tmp.length() == 0);
+	return tmp;
+}
+//Read Student Birthday
+short day()
+{
+	short tmp;
+	
+		cout << "\tDay: ";
+		cin >> tmp;
+	
+	return tmp;
+}
+short month()
+{
+	short tmp;
+	cout << "\tMonth: ";
+	cin >> tmp;
+	return tmp;
+}
+short year()
+{
+	short tmp;
+	cout << "\tYear: ";
+	cin >> tmp;
+	return tmp;
+}
+//Read one date
+Date ReadOneDate()
+{
+	Date tmp;
+	cout << "\tBirthday\n";
+	tmp.day = day();
+	tmp.month = month();
+	tmp.year = year();
+	return tmp;
+}
+//Read one student
+Students ReadOneStudent()
+{
+	Students tmp;
+	cin.ignore();
+	tmp.studentID = ReadStudentNumber();
+	tmp.name = ReadStudentName();
+	tmp.birthDate = ReadOneDate();
+	return tmp;
+}
+//Read all students
+void readAllStudents(Students tab[], short nb)
+{
+	for (int I = 0; I < nb; I++)
+	{
+		cout << "Student " << I + 1 << endl;
+		tab[I] = ReadOneStudent();
+	}
+}
+//Display one student
+void displayOneStudent(Students stud)
+{
+	cout << left << setw(12) << stud.studentID << setw(20) << stud.name << setw(2) << stud.birthDate.day << "/" << setw(2) << stud.birthDate.month << "/" << setw(10) << stud.birthDate.year << (2019 - stud.birthDate.year) << endl;
+}
+//Display all students
+void displayAllStudents(Students tab[], short nb)
+{
+	cout << left << setw(12) << "Numbers" << setw(20) << "Names" << setw(12) << "Birth dates" << setw(15) << "Age" << endl;
+	for (short I = 0; I < nb; I++)
+	{
+		displayOneStudent(tab[I]);
+	}
+}
+//Determine year
+short readDetYear(string value, short max, short min)
+{
+	short year;
+	do
+	{
+		cout << "Enter " << value << "year (" << max << " - " << min << ") :";
+		cin >> year;
+	} while (year > min || year < max);
+	return year;
+}
+//Display best year students
+void DisplayBestYearStuds(Students tab[], short nb, short min, short max)
+{
+	char found = 'n';
+	cout << "\n";
+	for (short I = 0; I < nb; I++)
+	{
+		if (tab[I].birthDate.year < min && tab[I].birthDate.year > max)
+		{
+			displayOneStudent(tab[I]);
+			found = 'y';
+		}
+	}
+}
