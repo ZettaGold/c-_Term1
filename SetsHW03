@@ -156,3 +156,27 @@ void DisplayBestYearStuds(Students tab[], short nb, short min, short max)
 		}
 	}
 }
+
+------
+
+cpp
+
+------
+
+#include "Functions_For_Homework.h"
+
+int main()
+{
+	Students students[10];
+	short NB, year1, year2;
+
+	DisplayTitle("Lasalle College");
+	NB = ReadNBStudents(10, 2);
+	readAllStudents(students, NB);
+	displayAllStudents(students, NB);
+	year1 = readDetYear("first", 1955, 2002);
+	year2 = readDetYear("second", 1955, 2002);
+	DisplayBestYearStuds(students, NB, year2, year1);
+	system("pause");
+	return 0;
+}
