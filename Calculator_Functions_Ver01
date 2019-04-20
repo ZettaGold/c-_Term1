@@ -1,0 +1,153 @@
+"Header.H" -- 
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+void ShowMenu(string title, string subject)
+{
+	cout << "\t" << title << "\n";
+	cout << "\t";
+	for (int I = 0; I < title.length(); I++)
+	{
+		cout << "-";
+	}
+	cout << endl;
+	cout << "\t" << subject << "\n";
+	cout << "\t";
+	for (int I = 0; I < subject.length(); I++)
+	{
+		cout << "-";
+	}
+	cout << endl;
+}
+
+short LoadAddition()
+{
+	system("cls");
+	ShowMenu("CALCULATOR", "ADDITION");
+	short nb, tmp, addition = 0;
+	char retry;
+	cout << "Enter the amount of values to add: ";
+	cin >> nb;
+	for (int I = 0; I < nb; I++)
+	{
+		cout << "Enter value " << I + 1 << ": ";
+		cin >> tmp;
+		addition = tmp + addition;
+	}
+	
+	cout << addition << endl;
+	cout << "Would you like to perform another addition?(y/n) ";
+	cin >> retry;
+	if (retry == 'y' || retry == 'Y')
+	{
+		LoadAddition();
+	}
+	else
+	{
+		ShowMenu("CALCULATOR", "BY:Glenn Sacony");
+	}
+	return addition;
+}
+
+short LoadSubtraction()
+{
+	system("cls");
+	ShowMenu("CALCULATOR", "SUBTRACTION");
+	short first, second, subtraction;
+	char retry;
+	cout << "Enter the first value to subtract: ";
+	cin >> first;
+	cout << "Enter the second value to subtract: ";
+	cin >> second;
+	subtraction = first - second;
+	cout << subtraction << endl;
+	cout << "Would you like to perform another subtraction?(y/n) ";
+	cin >> retry;
+	if (retry == 'y' || retry == 'Y')
+	{
+		LoadSubtraction();
+	}
+	else
+	{
+		ShowMenu("CALCULATOR", "BY:Glenn Sacony");
+	}
+	return subtraction;
+}
+
+short LoadMultiplication()
+{
+	system("cls");
+	ShowMenu("CALCULATOR", "MULTIPLICATION");
+	short nb, multiplication = 0, tmp;
+	cout << "Enter the amount of values to multiply: ";
+	cin >> nb;
+	for (int I = 0; I < nb; I++)
+	{
+		cout << "Enter value " << I + 1 << ": ";
+		cin >> tmp;
+		multiplication = tmp * multiplication;
+	}
+	
+		
+	cout << multiplication << endl;
+	return multiplication;
+}
+
+short LoadDivision()
+{
+	system("cls");
+	ShowMenu("CALCULATOR", "DIVISION");
+	short nb, division = 0, tmp;
+	cout << "Enter the first value to divide: ";
+	cin >> nb;
+	cout << "Enter the second number to divide: ";
+	cin >> tmp;
+	division = nb / tmp;
+	return division;
+}
+
+void ChooseSelection()
+{
+	short Selection;
+	cout << "\t 1 - Addition \n";
+	cout << "\t 2 - Subtraction \n";
+	cout << "\t 3 - Multiplication \n";
+	cout << "\t 4 - Division \n";
+	cout << "\t 5 - Exit program\n";
+	cout << "Please select an option: ";
+	cin >> Selection;
+
+	switch (Selection)
+	{
+	case 1:
+		LoadAddition();
+		break;
+	case 2:
+		LoadSubtraction();
+		break;
+	case 3:
+		LoadMultiplication();
+		break;
+	case 4:
+		LoadDivision();
+		break;
+	case 5:
+		system("exit");
+		break;
+	}
+}
+
+
+Source.cpp -- 
+#include "Header.h"
+
+int main()
+{
+	ShowMenu("CALCULATOR", "By: Glenn Sacony");
+	ChooseSelection();
+	system("pause");
+	return 0;
+}
